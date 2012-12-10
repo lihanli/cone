@@ -1,5 +1,3 @@
-require File.expand_path("../lib/your_gem/version", __FILE__)
-
 Gem::Specification.new do |gem|
   gem.name     = 'cone'
   gem.version  = '0.0.1'
@@ -9,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://github.com/lihanli/cone'
 
   gem.add_dependency('rake')
-  #gem.add_development_dependency('rspec', [">= 2.0.0"])
+  gem.add_dependency('coffee-rails')
 
   gem.files = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
 end

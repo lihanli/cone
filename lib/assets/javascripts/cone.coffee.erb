@@ -1,0 +1,23 @@
+processUrl = (url, params) ->
+  params.format = if params.format then ".#{params.format}" else ''
+  url = url.replace('(.:format)', params.format)
+  delete(params.format)
+
+  paramsArray = []
+
+  for k, v of params
+    keySymbol = ":#{k}"
+
+    if url.indexOf(keySymbol) == -1
+      paramsArray.push("#{encodeURIComponent(k)}=#{encodeURIComponent(v)}")
+    else
+      url = url.replace(keySymbol, encodeURIComponent(v))
+
+  url += "?#{paramsArray.join('&')}" unless paramsArray.length == 0
+  url
+
+@routes =
+<% Rails.application.routes.routes.named_routes.each do |route_name, route_val| %>
+  <%= route_name.camelize(:lower) %>Url: (params = {}) ->
+    processUrl(<%= route_val.path.spec.to_s.to_json %>, params)
+<% end %>
