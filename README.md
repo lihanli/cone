@@ -1,6 +1,6 @@
 # cone
 
-Use your Rails url helpers in javascript. 
+Automatically generated javascript url helpers based on your Rails routes.
 
 ## usage
 
@@ -19,6 +19,8 @@ cone.userUrl({id: 12, format: 'json' });
 cone.userUrl({id: 12, format: 'json', foo: 'bar baz'});
 "/users/12.json?foo=bar%20baz"
 ```
+
+Reload the server whenever your routes change to have the javascript regenerated.
 
 ## installation
 
