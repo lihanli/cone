@@ -8,5 +8,5 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('coffee-rails')
 
-  gem.files = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
+  gem.files = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*', 'README*', 'MIT-LICENSE'] & `git ls-files -z`.split("\0")
 end
