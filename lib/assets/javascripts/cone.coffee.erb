@@ -16,7 +16,7 @@ processUrl = (url, params) ->
   url += "?#{paramsArray.join('&')}" unless paramsArray.length == 0
   url
 
-@routes =
+@cone =
 <% Rails.application.routes.routes.named_routes.each do |route_name, route_val| %>
   <%= route_name.camelize(:lower) %>Url: (params = {}) ->
     processUrl(<%= route_val.path.spec.to_s.to_json %>, params)

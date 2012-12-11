@@ -6,7 +6,6 @@ Gem::Specification.new do |gem|
   gem.email    = 'frankieteardrop@gmail.com'
   gem.homepage = 'http://github.com/lihanli/cone'
 
-  gem.add_dependency('rake')
   gem.add_dependency('coffee-rails')
 
   gem.files = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
