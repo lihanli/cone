@@ -6,6 +6,7 @@ end
 
 task :build do
   system 'gem build cone.gemspec'
-  `mkdir -p build`
+  `rm -rf build`
+  `mkdir build`
   `mv *.gem build`
 end
