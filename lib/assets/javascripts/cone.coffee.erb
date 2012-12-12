@@ -1,6 +1,6 @@
-processUrl = (url, params) ->
+processPath = (path, params) ->
   params.format = if params.format then ".#{params.format}" else ''
-  url = url.replace('(.:format)', params.format)
+  path = path.replace('(.:format)', params.format)
   delete(params.format)
 
   paramsArray = []
@@ -8,20 +8,18 @@ processUrl = (url, params) ->
   for k, v of params
     keySymbol = ":#{k}"
 
-    if url.indexOf(keySymbol) == -1
+    if path.indexOf(keySymbol) == -1
       paramsArray.push("#{encodeURIComponent(k)}=#{encodeURIComponent(v)}")
     else
-      url = url.replace(keySymbol, encodeURIComponent(v))
+      path = path.replace(keySymbol, encodeURIComponent(v))
 
-  url += "?#{paramsArray.join('&')}" unless paramsArray.length == 0
-  url
+  path += "?#{paramsArray.join('&')}" unless paramsArray.length == 0
+  path
 
-@cone = {}
-
+@cone =
 <% Rails.application.routes.routes.named_routes.each do |route_name, route_val| %>
 
-<% route_name = route_name.camelize(:lower) %>
-cone.<%= route_name %>Path = cone.<%= route_name %>Url = (params = {}) ->
-  processUrl(<%= route_val.path.spec.to_s.to_json %>, params)
+  <%= route_name.camelize(:lower) %>Path: (params = {}) ->
+    processPath(<%= route_val.path.spec.to_s.to_json %>, params)
 
 <% end %>

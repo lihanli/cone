@@ -4,7 +4,7 @@ class ConeGemTest < ActionDispatch::IntegrationTest
 
   def get_cone_url(name, opt = {})
     # alias, params
-    get_js("cone.#{name}#{ opt[:alias] ? 'Url' : 'Path' }(#{ opt[:params] ? opt[:params].to_json : '' })")
+    get_js("cone.#{name}Path(#{ opt[:params] ? opt[:params].to_json : '' })")
   end
 
   test 'url without params' do
@@ -20,10 +20,6 @@ class ConeGemTest < ActionDispatch::IntegrationTest
   test 'url with get params' do
     assert_equal '/?foo=bar%20baz', get_cone_url('root', params: {foo: 'bar baz'})
     assert_equal '/users/12/posts?foo=bar%20baz', get_cone_url('userPosts', params: {user_id: '12', foo: 'bar baz'})
-  end
-
-  test 'url helper alias' do
-    assert_equal '/users/12/posts', get_cone_url('userPosts', params: {user_id: '12'}, alias: true)
   end
 
 end
