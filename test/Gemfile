@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.10'
 gem 'cone', path: '..'
 
 group :development, :test do
   gem 'thin'
-  gem 'pry'
   gem 'pry-rails'
   gem 'capybara', '2.0.1'
   gem 'turn', '0.9.6'

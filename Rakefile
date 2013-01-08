@@ -1,7 +1,7 @@
 task :test do
   Dir.chdir 'test'
   `bundle`
-  system 'rake test'
+  system 'bundle exec rake test'
 end
 
 task :build do
