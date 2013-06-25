@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    cone (0.0.4)
+    cone (0.0.6)
       coffee-rails
 
 GEM

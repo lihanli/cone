@@ -1,4 +1,4 @@
-processPath = (path, params) ->
+processPath = (path, params = {}) ->
   params.format = if params.format then ".#{params.format}" else ''
   path = path.replace('(.:format)', params.format)
   delete(params.format)
@@ -19,7 +19,7 @@ processPath = (path, params) ->
 @cone =
 <% Rails.application.routes.routes.named_routes.each do |route_name, route_val| %>
 
-  <%= route_name.camelize(:lower) %>Path: (params = {}) ->
+  <%= route_name.camelize(:lower) %>Path: (params) ->
     processPath(<%= route_val.path.spec.to_s.to_json %>, params)
 
 <% end %>
