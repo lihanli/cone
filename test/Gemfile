@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0'
 gem 'cone', path: '..'
 
 group :development, :test do
   gem 'thin'
   gem 'pry-rails'
-  gem 'capybara', '2.0.2'
-  gem 'turn', '0.9.6'
+  gem 'capybara', '2.2.1'
+  gem 'selenium-webdriver'
 end
