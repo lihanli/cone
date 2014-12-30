@@ -33,6 +33,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ansi (1.4.3)
     arel (5.0.0)
     builder (3.2.2)
     capybara (2.2.1)
@@ -66,6 +67,11 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.2)
+    minitest-reporters (1.0.8)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.9.2)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -95,6 +101,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.2.2)
+    ruby-progressbar (1.7.1)
     rubyzip (1.1.6)
     selenium-webdriver (2.44.0)
       childprocess (~> 0.5)
@@ -133,6 +140,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.2.1)
   cone!
+  minitest-reporters (= 1.0.8)
   pry-rails
   rails (= 4.1.0)
   selenium-webdriver (= 2.44.0)
