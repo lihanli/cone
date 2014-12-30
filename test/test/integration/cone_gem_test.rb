@@ -1,6 +1,11 @@
 require 'test_helper'
 
-class ZConeGemTest < ActionDispatch::IntegrationTest
+class ConeGemTest < ActionDispatch::IntegrationTest
+  def setup
+    assert(Dir["#{::Rails.application.config.instance_eval { @assets }[:cache_store][1]}*"].blank?) if Capybara::Server.ports.blank?
+
+    super
+  end
 
   def get_cone_url(name, opt = {})
     # alias, params
