@@ -7,5 +7,5 @@ group :development, :test do
   gem 'thin'
   gem 'pry-rails'
   gem 'capybara', '2.2.1'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '2.44.0'
 end
