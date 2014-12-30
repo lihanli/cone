@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ConeGemTest < ActionDispatch::IntegrationTest
+class ZConeGemTest < ActionDispatch::IntegrationTest
 
   def get_cone_url(name, opt = {})
     # alias, params
