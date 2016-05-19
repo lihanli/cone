@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name     = 'cone'
-  gem.version  = '0.0.6'
+  gem.version  = '0.1.0'
   gem.summary  = 'Rails client side URL helpers'
   gem.author   = 'Lihan Li'
   gem.email    = 'frankieteardrop@gmail.com'
