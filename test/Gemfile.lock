@@ -86,7 +86,6 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    multi_json (1.12.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pry (0.10.3)
@@ -125,9 +124,8 @@ GEM
     rake (11.1.2)
     ruby-progressbar (1.8.1)
     rubyzip (1.2.0)
-    selenium-webdriver (2.44.0)
+    selenium-webdriver (2.53.0)
       childprocess (~> 0.5)
-      multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
     slop (3.6.0)
@@ -159,7 +157,7 @@ DEPENDENCIES
   minitest-reporters (= 1.0.8)
   pry-rails
   rails (= 4.2.6)
-  selenium-webdriver (= 2.44.0)
+  selenium-webdriver (= 2.53.0)
   thin
 
 BUNDLED WITH
