@@ -3,7 +3,7 @@ module Cone
     class Railtie < ::Rails::Railtie
       config.before_initialize do
         # clear the assets cache otherwise routes don't get reloaded on server restart
-        assets_cache = ::Rails.application.config.instance_eval { @assets }[:cache_store][1]
+        assets_cache = 'tmp/cache/assets'
         ActiveSupport::Cache::FileStore.new(assets_cache).clear if File.directory?(assets_cache)
       end
     end
