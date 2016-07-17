@@ -17,9 +17,10 @@ processPath = (path, params = {}) ->
   path
 
 @cone =
-<% Rails.application.routes.routes.named_routes.each do |route_name, route_val| %>
+<% Rails.application.routes.routes.anchored_routes.each do |route| %>
+  <% route_name = route.name %>
+  <% next if route_name.nil? %>
 
   <%= route_name.camelize(:lower) %>Path: (params) ->
-    processPath(<%= route_val.path.spec.to_s.to_json %>, params)
-
+    processPath(<%= route.path.spec.to_s.to_json %>, params)
 <% end %>
