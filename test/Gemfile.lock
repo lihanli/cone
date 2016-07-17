@@ -1,8 +1,9 @@
 PATH
   remote: ..
   specs:
-    cone (0.1.0)
+    cone (0.2.0)
       coffee-rails
+      railties (~> 5.0)
 
 GEM
   remote: https://rubygems.org/
