@@ -10,14 +10,17 @@ user GET    /users/:id(.:format)                     users#show
 Let's say you have this Rails route. Here's how you would access it in Javascript with cone:
 
 ```javascript
-cone.userPath({id: 12});
+cone.userPath({ id: 12 });
 "/users/12"
 
-cone.userPath({id: 12, format: 'json'});
+cone.userPath({ id: 12, format: 'json' });
 "/users/12.json"
 
-cone.userPath({id: 12, format: 'json', foo: 'bar baz'});
+cone.userPath({ id: 12, format: 'json', foo: 'bar baz' });
 "/users/12.json?foo=bar%20baz"
+
+cone.userPath({ id: 12, foo: 'bar baz', anchor: 'foo' });
+"/users/12?foo=bar%20baz#foo"
 ```
 
 Reload the server whenever your routes change to have the Javascript regenerated.
