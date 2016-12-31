@@ -7,13 +7,19 @@ processPath = (path, params = {}) ->
 
   for k, v of params
     keySymbol = ":#{k}"
+    v = encodeURIComponent(v)
+    anchor = null
 
     if path.indexOf(keySymbol) == -1
-      paramsArray.push("#{encodeURIComponent(k)}=#{encodeURIComponent(v)}")
+      if k == 'anchor'
+        anchor = v
+      else
+        paramsArray.push("#{encodeURIComponent(k)}=#{v}")
     else
-      path = path.replace(keySymbol, encodeURIComponent(v))
+      path = path.replace(keySymbol, v)
 
   path += "?#{paramsArray.join('&')}" unless paramsArray.length == 0
+  path += "##{anchor}" if anchor?
   path
 
 @cone =
